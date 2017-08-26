@@ -2,7 +2,7 @@
 
 from selenium import webdriver
 from info import userinfo
-from public import basic
+from homework.common import basic
 import time
 
 class login_exit():
@@ -43,6 +43,9 @@ class login_exit():
 
 if __name__ == "__main__":
     url = "https://mail.sina.com.cn/?from=mail"
-    test = login_exit(url)
-    test.login_sina()
-    test.stop_test()
+
+    try:
+        test = login_exit(url)
+        test.login_sina()
+    finally:
+        test.stop_test()

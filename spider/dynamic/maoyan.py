@@ -1,8 +1,7 @@
 # -*- coding:utf-8 -*-
 
-from selenium import webdriver
 import time
-from public import basic
+from homework.common import basic
 
 class Search():
 
