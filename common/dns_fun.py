@@ -21,4 +21,4 @@ def dns_xm(domain):
 
 if __name__ == "__main__":
 
-    dns_xm('sina.com')
+    print dns_xm('sina.com')

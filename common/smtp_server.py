@@ -10,6 +10,16 @@ class CustomSMTPServer(SMTPServer):
         print 'Message addressed from:', mailfrom
         print 'Message addressed to  :', mailto
         print 'Message length        :', len(data)
+        inheaders = 1
+        lines = data.split('\n')
+        print '---------- MESSAGE FOLLOWS ----------'
+        for line in lines:
+            # headers first
+            if inheaders and not line:
+                print 'X-Peer:', peer[0]
+                inheaders = 0
+            print line
+        print '------------ END MESSAGE ------------'
         return
 
 
